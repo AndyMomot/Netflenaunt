@@ -1,0 +1,22 @@
+xcassets:
+  - inputs:
+    - Netflenaunt/Resources/Images
+    outputs:
+      - templateName: swift5
+        output: Netflenaunt/Resources/Images/Images.generated.swift
+  - inputs:
+    - Netflenaunt/Resources/Colors/Colors.xcassets
+    outputs:
+      - templateName: swift5
+        output: Netflenaunt/Resources/Colors/Colors.generated.swift
+        params:
+          enumName: Colors
+          
+fonts:
+  - inputs: Netflenaunt/Resources/Fonts
+    outputs:
+    - templateName: swift5
+      output: Netflenaunt/Resources/Fonts/Fonts.generated.swift
+      params:
+        enumName: Fonts
+
