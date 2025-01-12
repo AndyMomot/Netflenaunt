@@ -24,14 +24,14 @@ struct MenuPicker: View {
         } label: {
             VStack(alignment: .leading, spacing: 10) {
                 Text(title)
-                    .foregroundStyle(.darkBlue)
+                    .foregroundStyle(.blue)
                     .font(Fonts.SFProDisplay.medium.swiftUIFont(size: 16))
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
                 
                 HStack {
                     Text(selection)
-                        .foregroundStyle(.darkBlue)
+                        .foregroundStyle(.blue)
                         .font(Fonts.SFProDisplay.medium.swiftUIFont(size: 16))
                     
                     Spacer()
@@ -43,7 +43,7 @@ struct MenuPicker: View {
                 .cornerRadius(8, corners: .allCorners)
                 .overlay {
                     RoundedRectangle(cornerRadius: 8)
-                        .stroke(.darkBlue, lineWidth: 1)
+                        .stroke(.blue, lineWidth: 1)
                 }
             }
         }

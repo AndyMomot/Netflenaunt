@@ -31,12 +31,18 @@ extension DefaultsService {
 }
  
 extension DefaultsService {
-    var nickname: String {
+    var user: User? {
         get {
-            return standard.string(forKey: Keys.nickname.rawValue) ?? ""
+            if let data = standard.data(forKey: Keys.user.rawValue),
+               let user = try? JSONDecoder().decode(User.self, from: data) {
+                return user
+            }
+            return nil
         }
         set {
-            standard.set(newValue, forKey: Keys.nickname.rawValue)
+            if let data = try? JSONEncoder().encode(newValue) {
+                standard.set(data, forKey: Keys.user.rawValue)
+            }
         }
     }
 }
@@ -45,6 +51,6 @@ extension DefaultsService {
 extension DefaultsService {
     enum Keys: String {
         case flow
-        case nickname
+        case user
     }
 }

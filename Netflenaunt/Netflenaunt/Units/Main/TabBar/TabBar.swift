@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TabBar: View {
-    @StateObject private var viewModel = TabBarViewModel()
+    @StateObject private var viewModel = ViewModel()
     
     init() {
         UITabBar.appearance().isHidden = true
@@ -18,8 +18,9 @@ struct TabBar: View {
         ZStack {
             VStack(spacing: .zero) {
                 TabView(selection: $viewModel.selection) {
-                    Text("Tab 1")
+                    HomeView()
                         .tag(TabBarSelectionView.home.rawValue)
+                        .environmentObject(viewModel)
                     
                     Text("Tab 2")
                         .tag(TabBarSelectionView.statistics.rawValue)
@@ -34,10 +35,9 @@ struct TabBar: View {
                         .tag(TabBarSelectionView.faq.rawValue)
                 }
                 
-                Spacer()
-                
                 if viewModel.isShowTabBar {
                     TabBarCustomView(selectedItem: $viewModel.selection)
+                        .frame(height: UIScreen.main.bounds.height * 0.12)
                 }
             }
             .ignoresSafeArea(edges: .bottom)

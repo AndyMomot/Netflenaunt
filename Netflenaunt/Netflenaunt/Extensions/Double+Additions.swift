@@ -5,7 +5,7 @@ import Foundation
 
 extension Double {
     func string(style: NumberFormatter.Style = .decimal,
-                maximumFractionDigits: Int = 0,
+                maximumFractionDigits: Int = 2,
                 usesSeparator: Bool = false,
                 decimalSeparator: String = ",") -> String {
         let numberFormatter = NumberFormatter()

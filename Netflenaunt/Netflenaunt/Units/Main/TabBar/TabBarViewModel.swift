@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 extension TabBar {
-    final class TabBarViewModel: ObservableObject {
+    final class ViewModel: ObservableObject {
         @Published var selection = TabBarSelectionView.home.rawValue
         @Published var isShowTabBar = true
         

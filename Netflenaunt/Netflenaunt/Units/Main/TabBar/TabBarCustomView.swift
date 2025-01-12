@@ -28,13 +28,14 @@ struct TabBarCustomView: View {
     
     var body: some View {
         ZStack {
-            Image(items[selectedItem].imageName)
-                .resizable()
-                .scaledToFit()
+            LinearGradientBackground()
             
             HStack(spacing: 0) {
                 Spacer()
                 ForEach(0..<items.count, id: \.self) { index in
+                    let item = items[index]
+                    let isSelected = selectedItem == index
+                    
                     Button {
                         DispatchQueue.main.async {
                             withAnimation {
@@ -42,9 +43,24 @@ struct TabBarCustomView: View {
                             }
                         }
                     } label: {
-                        Rectangle()
-                            .scaledToFit()
-                            .opacity(.zero)
+                        ZStack {
+                            if isSelected {
+                                Circle()
+                                    .fill(.redCustom)
+                            }
+                            
+                            Image(item.imageName)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 31)
+                        }
+                        .padding(10)
+                        .clipShape(Circle())
+                        .offset(y: isSelected ? -30 : 0)
+                        .shadow(color: .ashGray.opacity(isSelected ? 0.25 : 0), radius: 4,
+                                x: -4, y: -4)
+                        .shadow(color: .black.opacity(isSelected ? 0.25 : 0), radius: 4,
+                                x: 4, y: 4)
                     }
                     
                     Spacer()

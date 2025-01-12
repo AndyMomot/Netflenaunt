@@ -14,7 +14,8 @@ extension RegistrationView {
         func saveNickname(completion: @escaping () -> Void) {
             DispatchQueue.global().async { [weak self] in
                 guard let self else { return }
-                DefaultsService.shared.nickname = self.nickname
+                let user = User(name: self.nickname)
+                DefaultsService.shared.user = user
                 completion()
             }
         }
