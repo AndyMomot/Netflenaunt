@@ -25,14 +25,21 @@ struct BackButton: View {
                 }
             }
             
+            Spacer()
+            
             Text(title)
                 .lineLimit(2)
                 .minimumScaleFactor(0.6)
             
             Spacer()
+            
+            if canDismiss {
+                Image(systemName: "chevron.left")
+                    .hidden()
+            }
         }
         .foregroundStyle(.white)
-        .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 28))
+        .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 20))
         .navigationBarBackButtonHidden()
     }
 }
@@ -44,5 +51,6 @@ struct BackButton: View {
             BackButton(title: "Telefony") {}
             BackButton(title: "Telefony") {}
         }
+        .padding()
     }
 }

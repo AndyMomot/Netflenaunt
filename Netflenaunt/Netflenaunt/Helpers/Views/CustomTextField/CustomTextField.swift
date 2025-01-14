@@ -26,7 +26,7 @@ struct CustomTextField: View {
                         .foregroundStyle(.mist)
                         .font(Fonts.SFProDisplay.regular.swiftUIFont(size: 16))
                         .padding(.horizontal, 12)
-                        .padding(.vertical, 16)
+                        .padding(.vertical, 28)
                     
                     
                     if text.isEmpty {
@@ -34,16 +34,9 @@ struct CustomTextField: View {
                                           isDynamic: isDynamic)
                     }
                 }
-                .background(
-                    LinearGradient(colors: [.deepIndigo, .deepPlum],
-                                   startPoint: .top,
-                                   endPoint: .bottom)
-                )
+                .background(LinearGradientBackground())
                 .cornerRadius(8, corners: .allCorners)
-                .shadow(color: .ashGray.opacity(0.25), radius: 4,
-                        x: -4, y: -4)
-                .shadow(color: .black.opacity(0.25), radius: 4,
-                        x: 4, y: 4)
+                .shadowModifier()
                 
             } else {
                 TextField(text: $text) {
@@ -53,17 +46,10 @@ struct CustomTextField: View {
                 .font(Fonts.SFProDisplay.regular.swiftUIFont(size: 16))
                 .foregroundStyle(.mist)
                 .padding(.horizontal, 12)
-                .padding(.vertical, 16)
-                .background(
-                    LinearGradient(colors: [.deepIndigo, .deepPlum],
-                                   startPoint: .top,
-                                   endPoint: .bottom)
-                )
+                .padding(.vertical, 28)
+                .background(LinearGradientBackground())
                 .cornerRadius(8, corners: .allCorners)
-                .shadow(color: .ashGray.opacity(0.25), radius: 4,
-                        x: -4, y: -4)
-                .shadow(color: .black.opacity(0.25), radius: 4,
-                        x: 4, y: 4)
+                .shadowModifier()
             }
         }
         .hideKeyboardWhenTappedAround()

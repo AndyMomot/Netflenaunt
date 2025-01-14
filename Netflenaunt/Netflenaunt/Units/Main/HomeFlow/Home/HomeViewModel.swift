@@ -13,5 +13,8 @@ extension HomeView {
         @Published var totalCosts = 0.0
         @Published var bussinesCosts = 0.0
         @Published var personalCosts = 0.0
+        
+        @Published var showAddIncome = false
+        @Published var showAddCost = false
     }
 }

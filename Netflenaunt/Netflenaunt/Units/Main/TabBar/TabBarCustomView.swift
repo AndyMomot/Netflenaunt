@@ -56,7 +56,7 @@ struct TabBarCustomView: View {
                         }
                         .padding(10)
                         .clipShape(Circle())
-                        .offset(y: isSelected ? -30 : 0)
+                        .offset(y: isSelected ? -20 : 0)
                         .shadow(color: .ashGray.opacity(isSelected ? 0.25 : 0), radius: 4,
                                 x: -4, y: -4)
                         .shadow(color: .black.opacity(isSelected ? 0.25 : 0), radius: 4,

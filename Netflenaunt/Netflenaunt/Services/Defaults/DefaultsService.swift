@@ -45,6 +45,36 @@ extension DefaultsService {
             }
         }
     }
+    
+    var transactions: [TransactionModel] {
+        get {
+            if let data = standard.data(forKey: Keys.transactions.rawValue),
+               let items = try? JSONDecoder().decode([TransactionModel].self, from: data) {
+                return items
+            }
+            return []
+        }
+        set {
+            if let data = try? JSONEncoder().encode(newValue) {
+                standard.set(data, forKey: Keys.transactions.rawValue)
+            }
+        }
+    }
+    
+    var categories: [TransactionCategory] {
+        get {
+            if let data = standard.data(forKey: Keys.categories.rawValue),
+               let items = try? JSONDecoder().decode([TransactionCategory].self, from: data) {
+                return items
+            }
+            return []
+        }
+        set {
+            if let data = try? JSONEncoder().encode(newValue) {
+                standard.set(data, forKey: Keys.categories.rawValue)
+            }
+        }
+    }
 }
 
 // MARK: - Keys
@@ -52,5 +82,7 @@ extension DefaultsService {
     enum Keys: String {
         case flow
         case user
+        case transactions
+        case categories
     }
 }

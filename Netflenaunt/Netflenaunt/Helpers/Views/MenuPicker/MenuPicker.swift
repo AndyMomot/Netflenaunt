@@ -10,51 +10,94 @@ import SwiftUI
 struct MenuPicker: View {
     let title: String
     let items: [String]
+    var showAddButton = false
     @Binding var selection: String
     
+    var onAdd: (() -> Void)?
+    
     var body: some View {
-        Menu {
-            ForEach(items, id: \.self) { item in
-                Button {
-                    selection = item
-                } label: {
-                    Text(item)
-                }
-            }
-        } label: {
-            VStack(alignment: .leading, spacing: 10) {
+        VStack(spacing: 12) {
+            HStack {
                 Text(title)
-                    .foregroundStyle(.blue)
+                    .foregroundStyle(.white)
                     .font(Fonts.SFProDisplay.medium.swiftUIFont(size: 16))
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
                 
+                Spacer()
+                
+                if showAddButton {
+                    Button {
+                        onAdd?()
+                    } label: {
+                        Image(systemName: "plus")
+                            .foregroundStyle(.mist)
+                            .fontWeight(.medium)
+                            .padding(4)
+                    }
+                    
+                }
+            }
+            
+            Menu {
+                ForEach(items, id: \.self) { item in
+                    Button {
+                        selection = item
+                    } label: {
+                        Text(item)
+                    }
+                }
+            } label: {
                 HStack {
-                    Text(selection)
-                        .foregroundStyle(.blue)
-                        .font(Fonts.SFProDisplay.medium.swiftUIFont(size: 16))
-                    
-                    Spacer()
-                    
-                    Image(systemName: "chevron.down")
+                    if items.isEmpty {
+                        Text("Pusty")
+                            .foregroundStyle(.mist)
+                            .font(Fonts.SFProDisplay.medium.swiftUIFont(size: 16))
+                        
+                        Spacer()
+                        
+                    } else {
+                        Text(selection.isEmpty ? "Wybierać" : selection)
+                            .foregroundStyle(.mist)
+                            .font(Fonts.SFProDisplay.medium.swiftUIFont(size: 16))
+                        
+                        Spacer()
+                        
+                        Image(systemName: "chevron.down")
+                            .foregroundStyle(.mist)
+                    }
                 }
-                .padding(18)
-                .background(.white)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 28)
+                .background(LinearGradientBackground())
                 .cornerRadius(8, corners: .allCorners)
-                .overlay {
-                    RoundedRectangle(cornerRadius: 8)
-                        .stroke(.blue, lineWidth: 1)
-                }
+                .shadowModifier()
             }
         }
     }
 }
 
 #Preview {
-    MenuPicker(
-        title: "Title",
-        items: [
-            "Item 1", "Item 2", "Item 3"
-        ], selection: .constant("Item 1"))
-    .padding()
+    ZStack {
+        LinearGradientBackground()
+            .ignoresSafeArea()
+        
+        VStack {
+            MenuPicker(
+                title: "Title",
+                items: [
+                    "Item 1", "Item 2", "Item 3"
+                ],
+                selection: .constant(""))
+            
+            MenuPicker(
+                title: "Title",
+                items: [],
+                showAddButton: true,
+                selection: .constant("")) {
+                    
+                }
+        }
+        .padding()
+    }
 }
