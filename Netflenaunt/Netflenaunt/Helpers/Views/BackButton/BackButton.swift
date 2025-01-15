@@ -30,6 +30,7 @@ struct BackButton: View {
             Text(title)
                 .lineLimit(2)
                 .minimumScaleFactor(0.6)
+                .multilineTextAlignment(.center)
             
             Spacer()
             

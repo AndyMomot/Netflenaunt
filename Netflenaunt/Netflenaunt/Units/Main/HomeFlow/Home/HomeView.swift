@@ -67,28 +67,19 @@ struct HomeView: View {
                                     .padding(30)
                                 }
                             
-                            VStack(spacing: 15) {
-                                HStack(spacing: 15) {
-                                    HomeButton(
-                                        image: Asset.addCost.name,
-                                        title: "Dodaj wydatek",
-                                        color: .redCustom) {
-                                            viewModel.showAddCost.toggle()
-                                        }
-                                    
-                                    HomeButton(
-                                        image: Asset.addIncome.name,
-                                        title: "Dodaj dochód",
-                                        color: .graphite) {
-                                            viewModel.showAddIncome.toggle()
-                                        }
-                                }
+                            HStack(spacing: 15) {
+                                HomeButton(
+                                    image: Asset.addCost.name,
+                                    title: "Dodaj wydatek",
+                                    color: .redCustom) {
+                                        viewModel.showAddCost.toggle()
+                                    }
                                 
                                 HomeButton(
-                                    image: Asset.report.name,
-                                    title: "Zobacz raport",
-                                    color: .black) {
-                                        
+                                    image: Asset.addIncome.name,
+                                    title: "Dodaj dochód",
+                                    color: .graphite) {
+                                        viewModel.showAddIncome.toggle()
                                     }
                             }
                             .padding(.vertical, 25)
@@ -107,6 +98,9 @@ struct HomeView: View {
                     .scrollIndicators(.never)
                 }
                 .padding(.horizontal)
+            }
+            .navigationDestination(isPresented: $viewModel.showOffers) {
+                OffersView()
             }
             .navigationDestination(isPresented: $viewModel.showAddIncome) {
                 AddTransactionView(viewType: .income)

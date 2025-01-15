@@ -25,7 +25,7 @@ struct TabBar: View {
                     Text("Tab 2")
                         .tag(TabBarSelectionView.statistics.rawValue)
                     
-                    Text("Tab 3")
+                    ProfileView()
                         .tag(TabBarSelectionView.profile.rawValue)
                     
                     Text("Tab 4")

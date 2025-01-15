@@ -40,7 +40,6 @@ struct NavigationBarView: View {
                         .padding(.vertical, 4)
                 }
             }
-
             
             Spacer()
             
