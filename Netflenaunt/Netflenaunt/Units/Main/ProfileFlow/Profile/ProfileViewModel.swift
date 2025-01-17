@@ -18,7 +18,7 @@ extension ProfileView {
         @Published var showImagePicker = false
         @Published var nickname = ""
         
-        @Published var showAddCategory = false
+        @Published var showCategoryManagement = false
         
         @Published var showSupport = false
         @Published var showAlert = false
@@ -33,27 +33,6 @@ extension ProfileView {
 }
 
 extension ProfileView.ViewModel {
-    func handleCategoryView(action: AddCategoryView.ViewAction) {
-        switch action {
-        case .dismiss:
-            Task { [weak self] in
-                guard let self else { return }
-                await MainActor.run {
-                    self.showAddCategory.toggle()
-                }
-            }
-        case .add(let category):
-            Task { [weak self] in
-                guard let self else { return }
-                await MainActor.run {
-                    self.showAddCategory.toggle()
-                }
-            }
-            
-            saveCategory(name: category)
-        }
-    }
-    
     func getProfile() {
         Task { [weak self] in
             guard let self, let user = DefaultsService.shared.user else { return }
@@ -86,19 +65,6 @@ extension ProfileView.ViewModel {
                self.image != .init(),
                let imageData = self.image.jpegData(compressionQuality: 1) {
                 FileManagerService().saveImage(data: imageData, for: id)
-            }
-        }
-    }
-}
-
-private extension ProfileView.ViewModel {
-    func saveCategory(name: String) {
-        Task {
-            let shared = DefaultsService.shared
-            
-            if !shared.categories.contains(where: { $0.name == name}) {
-                let item = TransactionCategory(name: name)
-                shared.categories.append(item)
             }
         }
     }

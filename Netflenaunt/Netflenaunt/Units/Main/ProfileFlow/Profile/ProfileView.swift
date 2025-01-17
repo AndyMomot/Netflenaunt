@@ -88,7 +88,7 @@ struct ProfileView: View {
                             
                             VStack(spacing: 24) {
                                 ProfileButton(title: "Zarządzaj kategoriami") {
-                                    viewModel.showAddCategory.toggle()
+                                    viewModel.showCategoryManagement.toggle()
                                 }
                                 
                                 if let url = viewModel.appStoreURL {
@@ -119,16 +119,12 @@ struct ProfileView: View {
                     .scrollIndicators(.never)
                 }
                 .padding()
-                
-                if viewModel.showAddCategory {
-                    AddCategoryView { action in
-                        viewModel.handleCategoryView(action: action)
-                    }
-                    .ignoresSafeArea()
-                }
             }
             .onAppear {
                 viewModel.getProfile()
+            }
+            .navigationDestination(isPresented: $viewModel.showCategoryManagement) {
+                CategoryManagementView()
             }
             .sheet(isPresented: $viewModel.showImagePicker) {
                 ImagePicker(selectedImage: $viewModel.image)

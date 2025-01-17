@@ -10,4 +10,5 @@ import Foundation
 struct TransactionCategory: Identifiable, Codable {
     private(set) var id = UUID().uuidString
     var name: String
+    var limit: Int = .zero
 }

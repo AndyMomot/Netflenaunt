@@ -25,14 +25,15 @@ struct TabBar: View {
                     Text("Tab 2")
                         .tag(TabBarSelectionView.statistics.rawValue)
                     
-                    ProfileView()
-                        .tag(TabBarSelectionView.profile.rawValue)
-                    
                     Text("Tab 4")
                         .tag(TabBarSelectionView.finance.rawValue)
                     
+                    ProfileView()
+                        .tag(TabBarSelectionView.profile.rawValue)
+                    
                     FAQView()
                         .tag(TabBarSelectionView.faq.rawValue)
+                        .environmentObject(viewModel)
                 }
                 
                 if viewModel.isShowTabBar {
