@@ -31,7 +31,7 @@ struct TabBar: View {
                     Text("Tab 4")
                         .tag(TabBarSelectionView.finance.rawValue)
                     
-                    Text("Tab 5")
+                    FAQView()
                         .tag(TabBarSelectionView.faq.rawValue)
                 }
                 

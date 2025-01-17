@@ -29,6 +29,9 @@
 		47858EFD2D3828620092D1B4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47858EFC2D3828620092D1B4 /* ProfileView.swift */; };
 		47858EFF2D3828670092D1B4 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47858EFE2D3828670092D1B4 /* ProfileViewModel.swift */; };
 		47858F052D382EEB0092D1B4 /* ProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47858F032D382EEB0092D1B4 /* ProfileButton.swift */; };
+		47858FBE2D3AC6E90092D1B4 /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47858FBD2D3AC6E90092D1B4 /* FAQView.swift */; };
+		47858FC02D3AC6F20092D1B4 /* FAQViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47858FBF2D3AC6F20092D1B4 /* FAQViewModel.swift */; };
+		47858FC22D3AC84E0092D1B4 /* FAQCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47858FC12D3AC84E0092D1B4 /* FAQCell.swift */; };
 		47F068CC2D32ACF30063B4F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F068C82D32ACF30063B4F4 /* Assets.xcassets */; };
 		47F068CE2D32ACF30063B4F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47F068CA2D32ACF30063B4F4 /* LaunchScreen.storyboard */; };
 		47F0693A2D32AD090063B4F4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F068F12D32AD090063B4F4 /* User.swift */; };
@@ -99,6 +102,9 @@
 		47858EFC2D3828620092D1B4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		47858EFE2D3828670092D1B4 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		47858F032D382EEB0092D1B4 /* ProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButton.swift; sourceTree = "<group>"; };
+		47858FBD2D3AC6E90092D1B4 /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
+		47858FBF2D3AC6F20092D1B4 /* FAQViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewModel.swift; sourceTree = "<group>"; };
+		47858FC12D3AC84E0092D1B4 /* FAQCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQCell.swift; sourceTree = "<group>"; };
 		47F068AE2D32AC700063B4F4 /* Netflenaunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Netflenaunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47F068C82D32ACF30063B4F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47F068C92D32ACF30063B4F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -281,6 +287,16 @@
 				47858F032D382EEB0092D1B4 /* ProfileButton.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		47858FBC2D3AC6E20092D1B4 /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+				47858FC12D3AC84E0092D1B4 /* FAQCell.swift */,
+				47858FBD2D3AC6E90092D1B4 /* FAQView.swift */,
+				47858FBF2D3AC6F20092D1B4 /* FAQViewModel.swift */,
+			);
+			path = FAQ;
 			sourceTree = "<group>";
 		};
 		47F068A52D32AC700063B4F4 = {
@@ -519,6 +535,7 @@
 				47F0692A2D32AD090063B4F4 /* TabBar */,
 				47858C6F2D33E37C0092D1B4 /* HomeFlow */,
 				47858EF92D3828510092D1B4 /* ProfileFlow */,
+				47858FBC2D3AC6E20092D1B4 /* FAQ */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -702,10 +719,13 @@
 				47F069452D32AD090063B4F4 /* TabBarViewModel.swift in Sources */,
 				47F069482D32AD090063B4F4 /* MenuPicker.swift in Sources */,
 				47858CD12D36DE790092D1B4 /* TransactionModel.swift in Sources */,
+				47858FC02D3AC6F20092D1B4 /* FAQViewModel.swift in Sources */,
 				47F069492D32AD090063B4F4 /* View+Additions.swift in Sources */,
 				47F0694C2D32AD090063B4F4 /* FileManagerService.swift in Sources */,
 				47F069502D32AD090063B4F4 /* ImagePicker.swift in Sources */,
+				47858FC22D3AC84E0092D1B4 /* FAQCell.swift in Sources */,
 				47F069512D32AD090063B4F4 /* FileManager+Image.swift in Sources */,
+				47858FBE2D3AC6E90092D1B4 /* FAQView.swift in Sources */,
 				4785225E2D32BD1100CF2D1E /* RegistrationView.swift in Sources */,
 				4785225F2D32BD1100CF2D1E /* RegistrationViewModel.swift in Sources */,
 				47858CCF2D36DAAE0092D1B4 /* DatePickerView.swift in Sources */,
