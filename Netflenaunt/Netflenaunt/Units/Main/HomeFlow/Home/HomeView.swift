@@ -93,16 +93,8 @@ struct HomeView: View {
                             }
                             .padding(.vertical, 25)
                             .padding(.horizontal)
-                            .background(
-                                LinearGradientBackground()
-                            )
-                            .shadow(color: .ashGray.opacity(0.25),
-                                    radius: 4,
-                                    x: -4, y: -4)
-                            .shadow(color: .black.opacity(0.25),
-                                    radius: 4,
-                                    x: 4, y: 4)
-                            
+                            .background(LinearGradientBackground())
+                            .shadowModifier()
                         }
                     }
                     .scrollIndicators(.never)

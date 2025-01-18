@@ -22,8 +22,9 @@ struct TabBar: View {
                         .tag(TabBarSelectionView.home.rawValue)
                         .environmentObject(viewModel)
                     
-                    Text("Tab 2")
+                    CostStatisticsView()
                         .tag(TabBarSelectionView.statistics.rawValue)
+                        .environmentObject(viewModel)
                     
                     Text("Tab 4")
                         .tag(TabBarSelectionView.finance.rawValue)

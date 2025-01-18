@@ -23,7 +23,7 @@ extension ReportView.ViewModel {
             guard let self else { return }
             let transactions = DefaultsService.shared.transactions.filter {
                 $0.date >= self.fromDate && $0.date <= self.toDate
-            }
+            }.sorted(by: { $0.date > $1.date })
             
             let groupedItems = transactions.reduce(into: [Date: [TransactionModel]]()) { result, item in
                 let date = item.date.format(to: .ddMMyyyy) ?? item.date
