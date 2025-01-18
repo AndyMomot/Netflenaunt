@@ -45,14 +45,14 @@ struct HomeView: View {
                                                 .foregroundStyle(.white)
                                                 .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 16))
                                             
-                                            Text(viewModel.totalCosts.string())
+                                            Text("\(viewModel.totalCosts)")
                                                 .foregroundStyle(.redCustom)
                                                 .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 24))
                                             
                                             HStack(spacing: 10) {
                                                 HomeCostsView(
                                                     name: "Biznes",
-                                                    costs: viewModel.bussinesCosts,
+                                                    costs: viewModel.businessCosts,
                                                     image: Asset.bussinessCost.name
                                                 )
                                                 
@@ -67,19 +67,28 @@ struct HomeView: View {
                                     .padding(30)
                                 }
                             
-                            HStack(spacing: 15) {
-                                HomeButton(
-                                    image: Asset.addCost.name,
-                                    title: "Dodaj wydatek",
-                                    color: .redCustom) {
-                                        viewModel.showAddCost.toggle()
-                                    }
+                            VStack(spacing: 15) {
+                                HStack(spacing: 15) {
+                                    HomeButton(
+                                        image: Asset.addCost.name,
+                                        title: "Dodaj wydatek",
+                                        color: .redCustom) {
+                                            viewModel.showAddCost.toggle()
+                                        }
+                                    
+                                    HomeButton(
+                                        image: Asset.addIncome.name,
+                                        title: "Dodaj dochód",
+                                        color: .graphite) {
+                                            viewModel.showAddIncome.toggle()
+                                        }
+                                }
                                 
                                 HomeButton(
-                                    image: Asset.addIncome.name,
+                                    image: Asset.report.name,
                                     title: "Dodaj dochód",
-                                    color: .graphite) {
-                                        viewModel.showAddIncome.toggle()
+                                    color: .black) {
+                                        viewModel.showReport.toggle()
                                     }
                             }
                             .padding(.vertical, 25)
@@ -93,11 +102,15 @@ struct HomeView: View {
                             .shadow(color: .black.opacity(0.25),
                                     radius: 4,
                                     x: 4, y: 4)
+                            
                         }
                     }
                     .scrollIndicators(.never)
                 }
                 .padding(.horizontal)
+            }
+            .onAppear {
+                viewModel.getReport()
             }
             .navigationDestination(isPresented: $viewModel.showOffers) {
                 OffersView()
@@ -107,6 +120,9 @@ struct HomeView: View {
             }
             .navigationDestination(isPresented: $viewModel.showAddCost) {
                 AddTransactionView(viewType: .cost)
+            }
+            .navigationDestination(isPresented: $viewModel.showReport) {
+                ReportView()
             }
         }
     }

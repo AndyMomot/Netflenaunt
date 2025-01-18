@@ -23,8 +23,8 @@ struct DatePickerView: View {
                 DatePicker("", selection: $selection,
                            displayedComponents: .date)
                     .labelsHidden()
-                    .colorInvert()
-                    .foregroundStyle(.mist)
+                    .colorScheme(.dark)
+                    .accentColor(.redCustom)
                 
                 Spacer()
             }

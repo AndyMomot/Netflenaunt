@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeCostsView: View {
     var name: String
-    var costs: Double
+    var costs: Int
     var image: String
     
     var body: some View {
@@ -29,7 +29,7 @@ struct HomeCostsView: View {
                         .foregroundStyle(.white)
                         .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 14))
                     
-                    Text(costs.string())
+                    Text("\(costs)")
                         .foregroundStyle(.redCustom)
                         .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 18))
                     
@@ -45,7 +45,7 @@ struct HomeCostsView: View {
 
 #Preview {
     HomeCostsView(name: "Biznes",
-                  costs: 1010.22,
+                  costs: 1010,
                   image: Asset.bussinessCost.name)
         .padding()
 }

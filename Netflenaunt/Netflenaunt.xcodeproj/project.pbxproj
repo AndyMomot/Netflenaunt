@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		471651D02D3BB42E005681BB /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471651CD2D3BB42E005681BB /* ReportView.swift */; };
+		471651D12D3BB42E005681BB /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471651CE2D3BB42E005681BB /* ReportViewModel.swift */; };
+		471651D32D3BBC3E005681BB /* ReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471651D22D3BBC3E005681BB /* ReportCell.swift */; };
 		478522432D32AF5D00CF2D1E /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 478522422D32AF5D00CF2D1E /* swiftgen.yml */; };
 		4785224A2D32B1C600CF2D1E /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478522482D32B1C600CF2D1E /* CustomProgressView.swift */; };
 		478522502D32B33B00CF2D1E /* LinearGradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4785224E2D32B33B00CF2D1E /* LinearGradientBackground.swift */; };
@@ -83,6 +86,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		471651CD2D3BB42E005681BB /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		471651CE2D3BB42E005681BB /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
+		471651D22D3BBC3E005681BB /* ReportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCell.swift; sourceTree = "<group>"; };
 		478522422D32AF5D00CF2D1E /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		478522482D32B1C600CF2D1E /* CustomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
 		4785224E2D32B33B00CF2D1E /* LinearGradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearGradientBackground.swift; sourceTree = "<group>"; };
@@ -171,6 +177,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		471651CF2D3BB42E005681BB /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				471651D22D3BBC3E005681BB /* ReportCell.swift */,
+				471651CD2D3BB42E005681BB /* ReportView.swift */,
+				471651CE2D3BB42E005681BB /* ReportViewModel.swift */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
 		478522492D32B1C600CF2D1E /* CustomProgressView */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +226,7 @@
 				47858CBB2D36D1170092D1B4 /* Home */,
 				47858CC72D36D2C60092D1B4 /* AddTransaction */,
 				47858EF32D3822B50092D1B4 /* Offers */,
+				471651CF2D3BB42E005681BB /* Report */,
 			);
 			path = HomeFlow;
 			sourceTree = "<group>";
@@ -729,6 +746,8 @@
 				47858CBC2D36D1170092D1B4 /* HomeButton.swift in Sources */,
 				47858CBD2D36D1170092D1B4 /* HomeCostsView.swift in Sources */,
 				47858CBE2D36D1170092D1B4 /* HomeView.swift in Sources */,
+				471651D02D3BB42E005681BB /* ReportView.swift in Sources */,
+				471651D12D3BB42E005681BB /* ReportViewModel.swift in Sources */,
 				47858EF42D3822B50092D1B4 /* OffersView.swift in Sources */,
 				47858EF52D3822B50092D1B4 /* OffersViewModel.swift in Sources */,
 				47858CBF2D36D1170092D1B4 /* HomeViewModel.swift in Sources */,
@@ -739,6 +758,7 @@
 				47858FC02D3AC6F20092D1B4 /* FAQViewModel.swift in Sources */,
 				47F069492D32AD090063B4F4 /* View+Additions.swift in Sources */,
 				47F0694C2D32AD090063B4F4 /* FileManagerService.swift in Sources */,
+				471651D32D3BBC3E005681BB /* ReportCell.swift in Sources */,
 				47F069502D32AD090063B4F4 /* ImagePicker.swift in Sources */,
 				47858FC22D3AC84E0092D1B4 /* FAQCell.swift in Sources */,
 				47F069512D32AD090063B4F4 /* FileManager+Image.swift in Sources */,
