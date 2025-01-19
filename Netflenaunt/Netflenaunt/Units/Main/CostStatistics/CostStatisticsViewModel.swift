@@ -89,6 +89,7 @@ extension CostStatisticsView.ViewModel {
             
             await MainActor.run {
                 self.categories = categories
+                self.categories.append("")
             }
         }
     }

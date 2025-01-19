@@ -57,7 +57,6 @@ struct CategoryCell: View {
                         .foregroundStyle(.white)
                 }
             }
-
         }
         .padding()
         .background(LinearGradientBackground())

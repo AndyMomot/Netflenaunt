@@ -16,6 +16,9 @@
 		471651E72D3BD48B005681BB /* CostStatisticsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471651E62D3BD48B005681BB /* CostStatisticsCell.swift */; };
 		471651E92D3BD5BA005681BB /* CostStatisticsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471651E82D3BD5BA005681BB /* CostStatisticsSection.swift */; };
 		471651ED2D3BD7E8005681BB /* CostStatisticsFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471651EC2D3BD7E8005681BB /* CostStatisticsFilter.swift */; };
+		471651F62D3CF6AA005681BB /* IncomeDistributionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471651F32D3CF6AA005681BB /* IncomeDistributionView.swift */; };
+		471651F72D3CF6AA005681BB /* IncomeDistributionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471651F42D3CF6AA005681BB /* IncomeDistributionViewModel.swift */; };
+		471651FD2D3CFA61005681BB /* IncomeInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471651FB2D3CFA61005681BB /* IncomeInfoCell.swift */; };
 		478522432D32AF5D00CF2D1E /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 478522422D32AF5D00CF2D1E /* swiftgen.yml */; };
 		4785224A2D32B1C600CF2D1E /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478522482D32B1C600CF2D1E /* CustomProgressView.swift */; };
 		478522502D32B33B00CF2D1E /* LinearGradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4785224E2D32B33B00CF2D1E /* LinearGradientBackground.swift */; };
@@ -101,6 +104,9 @@
 		471651E62D3BD48B005681BB /* CostStatisticsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostStatisticsCell.swift; sourceTree = "<group>"; };
 		471651E82D3BD5BA005681BB /* CostStatisticsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostStatisticsSection.swift; sourceTree = "<group>"; };
 		471651EC2D3BD7E8005681BB /* CostStatisticsFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostStatisticsFilter.swift; sourceTree = "<group>"; };
+		471651F32D3CF6AA005681BB /* IncomeDistributionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeDistributionView.swift; sourceTree = "<group>"; };
+		471651F42D3CF6AA005681BB /* IncomeDistributionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeDistributionViewModel.swift; sourceTree = "<group>"; };
+		471651FB2D3CFA61005681BB /* IncomeInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeInfoCell.swift; sourceTree = "<group>"; };
 		478522422D32AF5D00CF2D1E /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		478522482D32B1C600CF2D1E /* CustomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
 		4785224E2D32B33B00CF2D1E /* LinearGradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearGradientBackground.swift; sourceTree = "<group>"; };
@@ -216,6 +222,24 @@
 				471651E62D3BD48B005681BB /* CostStatisticsCell.swift */,
 				471651E82D3BD5BA005681BB /* CostStatisticsSection.swift */,
 				471651EC2D3BD7E8005681BB /* CostStatisticsFilter.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		471651F52D3CF6AA005681BB /* IncomeDistribution */ = {
+			isa = PBXGroup;
+			children = (
+				471651FC2D3CFA61005681BB /* Views */,
+				471651F32D3CF6AA005681BB /* IncomeDistributionView.swift */,
+				471651F42D3CF6AA005681BB /* IncomeDistributionViewModel.swift */,
+			);
+			path = IncomeDistribution;
+			sourceTree = "<group>";
+		};
+		471651FC2D3CFA61005681BB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				471651FB2D3CFA61005681BB /* IncomeInfoCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -602,6 +626,7 @@
 				47F0692A2D32AD090063B4F4 /* TabBar */,
 				47858C6F2D33E37C0092D1B4 /* HomeFlow */,
 				471651DD2D3BC739005681BB /* CostStatistics */,
+				471651F52D3CF6AA005681BB /* IncomeDistribution */,
 				47858EF92D3828510092D1B4 /* ProfileFlow */,
 				47858FBC2D3AC6E20092D1B4 /* FAQ */,
 			);
@@ -780,6 +805,7 @@
 				47858CBC2D36D1170092D1B4 /* HomeButton.swift in Sources */,
 				47858CBD2D36D1170092D1B4 /* HomeCostsView.swift in Sources */,
 				47858CBE2D36D1170092D1B4 /* HomeView.swift in Sources */,
+				471651FD2D3CFA61005681BB /* IncomeInfoCell.swift in Sources */,
 				471651D02D3BB42E005681BB /* ReportView.swift in Sources */,
 				471651D12D3BB42E005681BB /* ReportViewModel.swift in Sources */,
 				47858EF42D3822B50092D1B4 /* OffersView.swift in Sources */,
@@ -818,6 +844,8 @@
 				47858EFF2D3828670092D1B4 /* ProfileViewModel.swift in Sources */,
 				471651E52D3BCAF2005681BB /* CostStatisticsChart.swift in Sources */,
 				47F0695C2D32AD090063B4F4 /* ShareSheet.swift in Sources */,
+				471651F62D3CF6AA005681BB /* IncomeDistributionView.swift in Sources */,
+				471651F72D3CF6AA005681BB /* IncomeDistributionViewModel.swift in Sources */,
 				47F0695D2D32AD090063B4F4 /* RootViewController.swift in Sources */,
 				47858EFD2D3828620092D1B4 /* ProfileView.swift in Sources */,
 				47F0695E2D32AD090063B4F4 /* Double+Additions.swift in Sources */,

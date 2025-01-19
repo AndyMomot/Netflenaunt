@@ -75,6 +75,15 @@ extension DefaultsService {
             }
         }
     }
+    
+    var neededIncomePercentage: Int {
+        get {
+            standard.integer(forKey: Keys.neededIncomePercentage.rawValue)
+        }
+        set {
+            standard.set(newValue, forKey: Keys.neededIncomePercentage.rawValue)
+        }
+    }
 }
 
 // MARK: - Keys
@@ -84,5 +93,6 @@ extension DefaultsService {
         case user
         case transactions
         case categories
+        case neededIncomePercentage
     }
 }

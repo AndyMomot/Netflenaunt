@@ -26,8 +26,9 @@ struct TabBar: View {
                         .tag(TabBarSelectionView.statistics.rawValue)
                         .environmentObject(viewModel)
                     
-                    Text("Tab 4")
+                    IncomeDistributionView()
                         .tag(TabBarSelectionView.finance.rawValue)
+                        .environmentObject(viewModel)
                     
                     ProfileView()
                         .tag(TabBarSelectionView.profile.rawValue)
